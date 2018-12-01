@@ -11,3 +11,7 @@ general {
   S:password=PASSWORD
 }
 ```
+
+# Compiling
+Linux&Mac: ./gradlew build <br>
+Windows: gradlew build
