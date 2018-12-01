@@ -12,6 +12,6 @@ general {
 }
 ```
 
-# Compiling
+# Building
 Linux&Mac: ./gradlew build <br>
 Windows: gradlew build
