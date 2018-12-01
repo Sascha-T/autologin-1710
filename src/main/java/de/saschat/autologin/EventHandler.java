@@ -2,6 +2,7 @@ package de.saschat.autologin;
 
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.common.config.Configuration;
@@ -37,6 +38,12 @@ public class EventHandler {
                 loggedIn = true;
                 mc.thePlayer.sendChatMessage("/login " + password);
             }
+        }
+    }
+    @SubscribeEvent
+    public void onLeaveEvent(PlayerEvent.PlayerLoggedOutEvent ev) {
+        if(ev.player == Minecraft.getMinecraft().thePlayer) {
+            loggedIn = false;
         }
     }
 }
