@@ -34,9 +34,8 @@ public class EventHandler {
         if(ev.message.getUnformattedText().toLowerCase().contains("/login") && !loggedIn) {
             String password = getPassword();
             if(password != null) {
-                mc.thePlayer.sendChatMessage("/login " + password);
-            } else {
                 loggedIn = true;
+                mc.thePlayer.sendChatMessage("/login " + password);
             }
         }
     }
